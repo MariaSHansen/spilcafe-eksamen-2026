@@ -118,6 +118,40 @@ main {
   margin: 0 0 0.5rem 0;
 }
 
+.favorite-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.game-chip, .game-chip-row {
+  color: #6c0808;
+}
+
+.game-chip {
+  background: #faf3eb;
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.game-chip-time {
+  margin-top: 0.5rem;
+}
+
+.game-chip-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+}
+
 .controls {
   background:#faf3eb ;
   border: 1px solid #0c111a;
