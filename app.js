@@ -114,43 +114,40 @@ function showGames(games) {
 }
 
 function showGame(game) {
-  const genres = Array.isArray(game.genre)
-    ? game.genre.join(", ")
-    : game.genre;
-
   const gameCard = `
     <article class="game-card" tabindex="0">
-      <img src="${game.image}" alt=${game.title}" class="game-poster" />
+      <img src="${game.image}" alt="${game.title}" class="game-image" />
+      
       <div class="game-info">
-
         <div class="game-title-row">
           <h2>${game.title}</h2>
 
-          <button class="favorite-btn"
-          aria-label="Gem ${game.title} som favorit" >
+         <button class="favorite-btn"
+         aria-label="Gem ${game.title} som favorit" >
 
-         <i class="fa-regular fa-clock"></i>
+         <i class="fa-regular fa-heart"></i>
          </button>
           </div>
 
-        <div class="game-chip">
-        <i class="fa-regular fa-clock"></i>
-        <span>${game.playtime} min</span>
-       </div>
+         <div class="game-chip game-chip-time">
+         <i class="fa-regular fa-clock"></i>
+          <span>${formatPlaytime(game.playtime)}</span>
+          </div>
 
-        <div class="bottom-row">
-        <div class="game-chip">
-        <i class="fa-solid fa-users"></i>
-        <span>${game.players.min}-${game.players.max}</span>
-       </div>
+         <div class="game-chip-row">
+          <div class="game-chip">
+          <i class="fa-solid fa-users"></i>
+          <span>${game.players.min}-${game.players.max}</span>
+          </div>
 
-        <div class="game-chip">
-        <i class="fa-solid fa-location-dot"></i>
-        <span>${game.shelf}</span>
-
+          <div class="game-chip">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>${game.shelf}</span>
+        </div>
+        </div>
       </div>
     </article>
-  `;
+`;
 
   const gameList = document.querySelector("#game-list");
   gameList.insertAdjacentHTML("beforeend", gameCard);

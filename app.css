@@ -46,7 +46,7 @@ main {
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(2,1);
+  grid-template-columns: repeat(2,1)fr;
   gap: 1rem;
   padding: 1rem 0;
 }
@@ -299,7 +299,7 @@ dialog#game-dialog form {
   max-height: 90vh;
 }
 
-#dialog-content img.game-poster {
+#dialog-content img.game-image {
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -364,7 +364,7 @@ dialog#game-dialog form {
     padding: 1rem;
   }
 
-  #dialog-content img.game-poster {
+  #dialog-content img.game-image {
     max-width: 300px;
     margin: 0 auto;
   }
@@ -424,7 +424,7 @@ footer {
     font-size: 1.5rem;
   }
 
-  .game-card .game-poster {
+  .game-card .game-image {
     height: 300px;
   }
 }
