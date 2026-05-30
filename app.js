@@ -17,10 +17,10 @@ function initApp() {
     .querySelector("#sort-select")
     .addEventListener("change", applyFiltersAndSort);
 
-  getMovies();
+  getGames();
 }
 
-async function getMovies() {
+async function getGames() {
   try {
     const response = await fetch("./app.json");
     const data = await response.json();
