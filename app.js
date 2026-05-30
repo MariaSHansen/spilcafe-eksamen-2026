@@ -151,14 +151,6 @@ function showGame(game) {
       
     </div>
 
-      
-        <p class="genre">${genres}</p>
-        <p class="director-line"><strong> 2-4 personer </strong> ${game.players.min}-${game.players.max}</p>
-        <p class="director-line"><strong>Spilletid:</strong> ${game.playtime} min</p>
-        <p class="game-location"><strong>Placering:</strong> ${game.shelf}</p>
-        <p class="game-age"><strong>Anbefalet alder:</strong> ${game.age} år</p>
-        <p class="game-availability"><strong>Tilgængelig:</strong> ${game.available ? "Ja" : "Nej"}</p>
-
       </div>
     </article>
   `;
