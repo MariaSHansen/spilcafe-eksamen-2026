@@ -2,6 +2,8 @@
   {
     "id": 1,
     "title": "Partners",
+    "description": "Partners er et strategisk brætspil, hvor fire spillere spiller sammen i hold af to. Spillet går ud på at samarbejde med sin partner for at få alle brikker sikkert i mål ved hjælp af spillekort, som bestemmer ens træk. Det kombinerer held, taktik og teamwork, da man både skal planlægge sine egne træk og støtte sin partner undervejs.",
+    "rules": "Partners er et brætspil for typisk 4 spillere, hvor man spiller i hold af 2. Målet er at være det første hold, der får alle sine (og sin partners) brikker i mål. Man bruger kort i stedet for terninger til at flytte brikkerne rundt på brættet, og hvert kort har en særlig funktion (fx antal felter, bytning eller specielle træk). Sådan foregår spillet kort: Hver spiller får 4 brikker og 4 kort. Man bytter ét kort med sin partner i starten af hver runde. På sin tur spiller man et kort og flytter en brik. Når alle kort er spillet, får man nye kort og fortsætter. Spillet kræver samarbejde og strategi, da man både skal hjælpe sin partner og samtidig modarbejde modstanderne. Det hold, der først får alle 8 brikker (begges) i mål.",
     "image": "https://spilregler.dk/wp-content/uploads/2018/12/Partners.png",
     "genre": "Familie",
     "playtime": 120,
@@ -15,6 +17,8 @@
   {
     "id": 2,
     "title": "Codenames",
+    "description": "Codenames er et ord- og associationsspil, hvor to hold konkurrerer om at finde deres egne hemmelige ord på en spilleplade. Hvert hold har en “spymaster”, som giver ledetråde bestående af ét ord og et tal, der skal hjælpe holdkammeraterne med at gætte de rigtige ord. Spillet kræver kreativ tænkning, samarbejde og evnen til at tænke i forbindelser mellem ord — samtidig med at man undgår modstanderens ord og det farlige “snigmorder”-ord, som taber spillet med det samme.",
+    "rules": "Sådan foregår en runde: Spymasteren giver en ledetråd: ét ord + et tal (fx “dyr 2”). Tallet viser, hvor mange ord ledetråden passer på. Holdet gætter derefter på de ord, de mener passer. De må gætte op til tallet + ét ekstra gæt. Vigtigt: Gætter man et forkert ord, går turen til modstanderen. Rammer man modstanderens ord, hjælper man dem. Rammer man det neutrale ord, sker der ikke noget. Rammer man “snigmorderen”, taber holdet med det samme.",
     "image": "https://www.spelexperten.dk/bilder/artiklar/zoom/CGE1031_1.jpg?m=1766502706",
     "genre": "Familie",
     "playtime": 30,
@@ -28,6 +32,8 @@
   {
     "id": 3,
     "title": "Ticket To Ride",
+    "description": "Ticket to Ride er et familievenligt strategispil, hvor spillerne konkurrerer om at opbygge jernbanenetværk på tværs af et landkort. Spillet kombinerer held og strategi, da man både skal trække de rigtige kort og planlægge sine ruter nøje. Samtidig skal man være opmærksom på modstanderne, som kan blokere vigtige forbindelser. Det gør spillet både spændende og taktisk uden at være svært at lære.",
+    "rules": "Spillerne starter med en hånd af togvognskort og et antal destinationsbilletter, som viser hvilke byer de skal forbinde. På sin tur kan man vælge mellem tre handlinger: trække nye kort, bygge en rute eller tage flere destinationsbilletter. For at bygge en rute skal man spille et antal kort i samme farve som ruten kræver, hvorefter man placerer sine tog på brættet og scorer point.Undervejs forsøger spillerne at fuldføre deres destinationsbilletter, som giver ekstra point men som også kan give minuspoint, hvis de ikke bliver opfyldt. Spillet nærmer sig sin afslutning, når en spiller har få tog tilbage, hvorefter alle får en sidste tur. Vinder:Den spiller med flest point, når alle runder er færdigspillet.",
     "image": "https://snydepels.dk/cdn/shop/products/Ticket_to_ride.png?v=1571438747",
     "genre": "Strategi",
     "playtime": 60,
