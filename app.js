@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", initApp);
 
-let allMovies = [];
+let allGames = [];
 
 function initApp() {
   document
@@ -27,7 +27,7 @@ async function getMovies() {
 
     console.log("DATA:", data);
 
-    allMovies = data;
+    allGames = data;
 
     populateGenreSelect();
     applyFiltersAndSort();
@@ -40,7 +40,7 @@ function populateGenreSelect() {
   const genreSelect = document.querySelector("#genre-select");
   const genres = new Set();
 
-  for (const movie of allMovies) {
+  for (const movie of allGames) {
     const movieGenres = Array.isArray(movie.genre)
       ? movie.genre
       : [movie.genre];
@@ -71,7 +71,7 @@ function applyFiltersAndSort() {
   const selectedGenre = document.querySelector("#genre-select").value;
   const sortOption = document.querySelector("#sort-select").value;
 
-  let filteredMovies = allMovies.filter(function (movie) {
+  let filteredMovies = allGames.filter(function (movie) {
     const matchesTitle = movie.title.toLowerCase().includes(searchValue);
 
     const movieGenres = Array.isArray(movie.genre)
@@ -100,7 +100,7 @@ function showMovies(movies) {
   const movieCount = document.querySelector("#movie-count");
 
   movieList.innerHTML = "";
-  movieCount.textContent = `Viser ${movies.length} ud af ${allMovies.length} spil`;
+  movieCount.textContent = `Viser ${movies.length} ud af ${allGames.length} spil`;
 
   if (movies.length === 0) {
     movieList.innerHTML =
