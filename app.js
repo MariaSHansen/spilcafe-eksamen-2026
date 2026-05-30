@@ -131,25 +131,22 @@ function showGame(game) {
 
          <i class="fa-regular fa-clock"></i>
          </button>
-        </div>
+          </div>
 
-      <div class="game-chip">
+        <div class="game-chip">
         <i class="fa-regular fa-clock"></i>
         <span>${game.playtime} min</span>
-      </div>
+       </div>
 
-      <div class="bottom-row">
+        <div class="bottom-row">
         <div class="game-chip">
         <i class="fa-solid fa-users"></i>
         <span>${game.players.min}-${game.players.max}</span>
-      </div>
+       </div>
 
-      <div class="game-chip">
+        <div class="game-chip">
         <i class="fa-solid fa-location-dot"></i>
-       <span>${game.shelf}</span>
-      </div>
-      
-    </div>
+        <span>${game.shelf}</span>
 
       </div>
     </article>
