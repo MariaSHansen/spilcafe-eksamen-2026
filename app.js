@@ -120,11 +120,38 @@ function showGame(game) {
 
   const gameCard = `
     <article class="game-card" tabindex="0">
-      <img src="${game.image}" alt="Poster af ${game.title}" class="game-poster" />
+      <img src="${game.image}" alt=${game.title}" class="game-poster" />
       <div class="game-info">
-        <div class="title-row">
+
+        <div class="game-title-row">
           <h2>${game.title}</h2>
+
+          <button class="favorite-btn"
+          aria-label="Gem ${game.title} som favorit" >
+
+         <i class="fa-regular fa-clock"></i>
+         </button>
         </div>
+
+      <div class="game-chip">
+        <i class="fa-regular fa-clock"></i>
+        <span>${game.playtime} min</span>
+      </div>
+
+      <div class="bottom-row">
+        <div class="game-chip">
+        <i class="fa-solid fa-users"></i>
+        <span>${game.players.min}-${game.players.max}</span>
+      </div>
+
+      <div class="game-chip">
+        <i class="fa-solid fa-location-dot"></i>
+       <span>${game.shelf}</span>
+      </div>
+      
+    </div>
+
+      
         <p class="genre">${genres}</p>
         <p class="director-line"><strong> 2-4 personer </strong> ${game.players.min}-${game.players.max}</p>
         <p class="director-line"><strong>Spilletid:</strong> ${game.playtime} min</p>
@@ -157,18 +184,6 @@ function showGameDialog(game) {
   const actors = Array.isArray(game.actors)
     ? game.actors.join(", ")
     : game.actors;
-
-  dialogContent.innerHTML = `
-    <img src="${game.image}" alt="Poster af ${game.title}" class="game-poster">
-    <div class="dialog-details">
-      <h2>${game.title} <span class="game-year">(${game.year})</span></h2>
-      <p class="game-genre">${genres}</p>
-      <p class="game-rating">⭐ ${game.rating}</p>
-      <p><strong>Beskrivelse:</strong> ${game.description}</p>
-      <p><strong>Spilletsregler:</strong> ${game.rules}</p>
-      <p class="game-description">${game.description}</p>
-    </div>
-  `;
 
   dialog.showModal();
 }
