@@ -92,10 +92,10 @@ function applyFiltersAndSort() {
     filteredGames.sort((a, b) => b.rating - a.rating);
   }
 
-  showMovies(filteredGames);
+  showGames(filteredGames);
 }
 
-function showMovies(movies) {
+function showGames(movies) {
   const movieList = document.querySelector("#movie-list");
   const movieCount = document.querySelector("#movie-count");
 
@@ -109,11 +109,11 @@ function showMovies(movies) {
   }
 
   for (const movie of movies) {
-    showMovie(movie);
+    showGame(movie);
   }
 }
 
-function showMovie(movie) {
+function showGame(movie) {
   const genres = Array.isArray(movie.genre)
     ? movie.genre.join(", ")
     : movie.genre;
