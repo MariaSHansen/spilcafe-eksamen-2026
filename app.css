@@ -46,9 +46,9 @@ main {
 
 .game-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  padding: 2rem 0;
+  grid-template-columns: repeat(2,1);
+  gap: 1rem;
+  padding: 1rem 0;
 }
 
 @media (min-width: 600px) {
@@ -70,16 +70,19 @@ main {
 }
 
 .game-card {
-  background:#faf3eb 100%;
-  border: 2px solid rgba(162, 37, 37, 0.564);
-  border-radius: 12px;
+  background:#e6d6c4;
+  border: 2px solid #6c0808;
+  border-radius: 18px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease,
-    border-color 200ms ease;
+}
+
+.game-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
 }
 
 .game-card:hover {
@@ -106,7 +109,7 @@ main {
 }
 
 .game-info {
-  padding: 1.5rem;
+  padding: 0.6rem 0.2rem 0.2rem;
 }
 
 .game-info h2 {
