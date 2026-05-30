@@ -32,6 +32,44 @@ header h1 {
   color: #bbbbbb;
 }
 
+.topbar {
+  background: #7a0808;
+  margin: 1rem auto;
+  width: min(94vw, 430px);
+  border-radius: 14px;
+  padding: 0.5rem 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.topbar {
+  width: 48px;
+  height: auto;
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-btn, 
+.search-btn {
+  border: none;
+  background: transparent;
+  color: #faf3eb;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.search-btn {
+  font-size: 1.1rem;
+}
+
 .subtitle {
   font-size: 0.95rem;
   color: var(--text-muted);
@@ -144,7 +182,7 @@ main {
   border-radius: 12px;
   backdrop-filter: blur(4px);
   padding: 1rem;
-  display: grid;
+  display: none;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 0.8rem;
   margin-bottom: 1rem;
@@ -432,14 +470,6 @@ footer {
 
 header {
   position: relative;
-}
-
-.logo {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 120px;   /* justér størrelsen */
-  height: auto;
 }
 
 .game-location,
