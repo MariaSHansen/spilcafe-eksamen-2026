@@ -71,7 +71,7 @@ function applyFiltersAndSort() {
   const selectedGenre = document.querySelector("#genre-select").value;
   const sortOption = document.querySelector("#sort-select").value;
 
-  let filteredMovies = allGames.filter(function (movie) {
+  let filteredGames = allGames.filter(function (movie) {
     const matchesTitle = movie.title.toLowerCase().includes(searchValue);
 
     const movieGenres = Array.isArray(movie.genre)
@@ -85,14 +85,14 @@ function applyFiltersAndSort() {
   });
 
   if (sortOption === "title") {
-    filteredMovies.sort((a, b) => a.title.localeCompare(b.title));
+    filteredGames.sort((a, b) => a.title.localeCompare(b.title));
   } else if (sortOption === "year") {
-    filteredMovies.sort((a, b) => b.year - a.year);
+    filteredGames.sort((a, b) => b.year - a.year);
   } else if (sortOption === "rating") {
-    filteredMovies.sort((a, b) => b.rating - a.rating);
+    filteredGames.sort((a, b) => b.rating - a.rating);
   }
 
-  showMovies(filteredMovies);
+  showMovies(filteredGames);
 }
 
 function showMovies(movies) {
