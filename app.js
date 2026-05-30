@@ -72,7 +72,7 @@ function applyFiltersAndSort() {
   const sortOption = document.querySelector("#sort-select").value;
 
   let filteredGames = allGames.filter(function (game) {
-    const matchesTitle = movie.title.toLowerCase().includes(searchValue);
+    const matchesTitle = game.title.toLowerCase().includes(searchValue);
 
     const gameGenres = Array.isArray(game.genre)
       ? game.genre
@@ -96,14 +96,14 @@ function applyFiltersAndSort() {
 }
 
 function showGames(games) {
-  const movieList = document.querySelector("#movie-list");
-  const movieCount = document.querySelector("#movie-count");
+  const gameList = document.querySelector("#game-list");
+  const gameCount = document.querySelector("#game-count");
 
-  movieList.innerHTML = "";
-  movieCount.textContent = `Viser ${movies.length} ud af ${allGames.length} spil`;
+  gameList.innerHTML = "";
+  gameCount.textContent = `Viser ${games.length} ud af ${allGames.length} spil`;
 
-  if (movies.length === 0) {
-    movieList.innerHTML =
+  if (games.length === 0) {
+    gameList.innerHTML =
       '<p class="empty">Ingen spil matcher din søgning eller genre.</p>';
     return;
   }
@@ -114,32 +114,32 @@ function showGames(games) {
 }
 
 function showGame(game) {
-  const genres = Array.isArray(movie.genre)
+  const genres = Array.isArray(game.genre)
     ? game.genre.join(", ")
     : game.genre;
 
-  const movieCard = `
-    <article class="movie-card" tabindex="0">
-      <img src="${movie.image}" alt="Poster af ${movie.title}" class="movie-poster" />
-      <div class="movie-info">
+  const gameCard = `
+    <article class="game-card" tabindex="0">
+      <img src="${game.image}" alt="Poster af ${game.title}" class="game-poster" />
+      <div class="game-info">
         <div class="title-row">
-          <h2>${movie.title}</h2>
+          <h2>${game.title}</h2>
         </div>
         <p class="genre">${genres}</p>
-        <p class="director-line"><strong> 2-4 personer </strong> ${movie.players}</p>
-        <p class="director-line"><strong>Spilletid:</strong> ${movie.playtime} min</p>
-        <p class="movie-location"><strong>Placering:</strong> ${movie.shelf}</p>
-        <p class="movie-age"><strong>Anbefalet alder:</strong> ${movie.age} år</p>
-        <p class="movie-availability"><strong>Tilgængelig:</strong> ${movie.available ? "Ja" : "Nej"}</p>
+        <p class="director-line"><strong> 2-4 personer </strong> ${game.players.min}-${game.players.max}</p>
+        <p class="director-line"><strong>Spilletid:</strong> ${game.playtime} min</p>
+        <p class="game-location"><strong>Placering:</strong> ${game.shelf}</p>
+        <p class="game-age"><strong>Anbefalet alder:</strong> ${game.age} år</p>
+        <p class="game-availability"><strong>Tilgængelig:</strong> ${game.available ? "Ja" : "Nej"}</p>
 
       </div>
     </article>
   `;
 
-  const movieList = document.querySelector("#movie-list");
-  movieList.insertAdjacentHTML("beforeend", movieCard);
+  const gameList = document.querySelector("#game-list");
+  gameList.insertAdjacentHTML("beforeend", gameCard);
 
-  const newCard = movieList.lastElementChild;
+  const newCard = gameList.lastElementChild;
 
   newCard.addEventListener("click", function () {
     showGameDialog(game);
@@ -147,26 +147,26 @@ function showGame(game) {
 }
 
 function showGameDialog(game) {
-  const dialog = document.querySelector("#movie-dialog");
+  const dialog = document.querySelector("#game-dialog");
   const dialogContent = document.querySelector("#dialog-content");
 
-  const genres = Array.isArray(movie.genre)
+  const genres = Array.isArray(game.genre)
     ? game.genre.join(", ")
     : game.genre;
 
-  const actors = Array.isArray(movie.actors)
-    ? movie.actors.join(", ")
-    : movie.actors;
+  const actors = Array.isArray(game.actors)
+    ? game.actors.join(", ")
+    : game.actors;
 
   dialogContent.innerHTML = `
-    <img src="${movie.image}" alt="Poster af ${movie.title}" class="movie-poster">
+    <img src="${game.image}" alt="Poster af ${game.title}" class="game-poster">
     <div class="dialog-details">
-      <h2>${movie.title} <span class="movie-year">(${movie.year})</span></h2>
-      <p class="movie-genre">${genres}</p>
-      <p class="movie-rating">⭐ ${movie.rating}</p>
-      <p><strong>Beskrivelse:</strong> ${movie.description}</p>
-      <p><strong>Spilletsregler:</strong> ${movie.rules}</p>
-      <p class="movie-description">${movie.description}</p>
+      <h2>${game.title} <span class="game-year">(${game.year})</span></h2>
+      <p class="game-genre">${genres}</p>
+      <p class="game-rating">⭐ ${game.rating}</p>
+      <p><strong>Beskrivelse:</strong> ${game.description}</p>
+      <p><strong>Spilletsregler:</strong> ${game.rules}</p>
+      <p class="game-description">${game.description}</p>
     </div>
   `;
 
