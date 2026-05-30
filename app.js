@@ -40,7 +40,7 @@ function populateGenreSelect() {
   const genreSelect = document.querySelector("#genre-select");
   const genres = new Set();
 
-  for (const movie of allGames) {
+  for (const game of allGames) {
     const movieGenres = Array.isArray(movie.genre)
       ? movie.genre
       : [movie.genre];
@@ -71,7 +71,7 @@ function applyFiltersAndSort() {
   const selectedGenre = document.querySelector("#genre-select").value;
   const sortOption = document.querySelector("#sort-select").value;
 
-  let filteredGames = allGames.filter(function (movie) {
+  let filteredGames = allGames.filter(function (game) {
     const matchesTitle = movie.title.toLowerCase().includes(searchValue);
 
     const movieGenres = Array.isArray(movie.genre)
@@ -95,7 +95,7 @@ function applyFiltersAndSort() {
   showGames(filteredGames);
 }
 
-function showGames(movies) {
+function showGames(games) {
   const movieList = document.querySelector("#movie-list");
   const movieCount = document.querySelector("#movie-count");
 
@@ -108,12 +108,12 @@ function showGames(movies) {
     return;
   }
 
-  for (const movie of movies) {
-    showGame(movie);
+  for (const game of games) {
+    showGame(game);
   }
 }
 
-function showGame(movie) {
+function showGame(game) {
   const genres = Array.isArray(movie.genre)
     ? movie.genre.join(", ")
     : movie.genre;
@@ -142,11 +142,11 @@ function showGame(movie) {
   const newCard = movieList.lastElementChild;
 
   newCard.addEventListener("click", function () {
-    showMovieDialog(movie);
+    showGameDialog(game);
   });
 }
 
-function showMovieDialog(movie) {
+function showGameDialog(game) {
   const dialog = document.querySelector("#movie-dialog");
   const dialogContent = document.querySelector("#dialog-content");
 
