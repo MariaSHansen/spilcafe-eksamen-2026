@@ -187,3 +187,7 @@ function showGameDialog(game) {
 
   dialog.showModal();
 }
+
+function formatPlaytime(playtime) {
+  return typeof playtime === "number" ? `${playtime} min`: `${playtime} min`;
+}
