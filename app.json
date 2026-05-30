@@ -105,7 +105,7 @@
   },
   {
     "id": 9,
-    "title": "Labrynth",
+    "title": "Labyrinth",
     "image": "https://www.gamesworldsa.com.au/cdn/shop/products/TheAmazingLabyrinthBoardGame_800x800.jpg?v=1669165350",
     "genre": "Familiespil",
     "playtime": 45,
@@ -144,8 +144,9 @@
   },
   {
     "id": 12,
-    "title": "Triomimos",
+    "title": "Triominos",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGh6wXCE53uJ9y5H_fmdfngRARDbymiUsIeg&s",
+    "genre": "Familie",
     "playtime": 30,
     "players": { "min": 2, "max": 4 },
     "language": "Dansk",
