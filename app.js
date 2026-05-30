@@ -163,13 +163,38 @@ function showGameDialog(game) {
   const dialog = document.querySelector("#game-dialog");
   const dialogContent = document.querySelector("#dialog-content");
 
-  const genres = Array.isArray(game.genre)
-    ? game.genre.join(", ")
-    : game.genre;
+  const genres = Array.isArray(game.genre) ? game.genre.join(", ") : game.genre;
 
-  const actors = Array.isArray(game.actors)
-    ? game.actors.join(", ")
-    : game.actors;
+  dialogContent.innerHTML = `
+    <div class="dialog-card">
+      <img src="${game.image}" alt="${game.title}" class="dialog-image" />
+
+      <div class="dialog-info">
+        <h2>${game.title}</h2>
+
+        <div class="dialog-meta">
+        <span><i class="fa-regular fa-clock"></i> ${formatPlaytime(game.playtime)}</span>
+          <span><i class="fa-solid fa-users"></i> ${game.players.min}-${game.players.max}</span>
+          <span><i class="fa-solid fa-location-dot"></i> ${game.shelf}</span>
+        </div>
+
+      <p><strong>Kategori:</strong> ${genres}</p>
+        <p><strong>Alder:</strong> ${game.age}+ år</p>
+        <p><strong>Sprog:</strong> ${game.language}</p>
+        <p><strong>Tilgængelig:</strong> ${game.available ? "Ja" : "Nej"}</p>
+
+        <details>
+          <summary>Beskrivelse</summary>
+          <p>${game.description || "Beskrivelse kommer senere."}</p>
+        </details>
+
+        <details>
+          <summary>Regler</summary>
+          <p>${game.rules || "Regler kommer senere."}</p>
+        </details>
+      </div>
+    </div>
+`;
 
   dialog.showModal();
 }
