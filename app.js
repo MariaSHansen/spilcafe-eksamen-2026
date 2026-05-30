@@ -41,11 +41,11 @@ function populateGenreSelect() {
   const genres = new Set();
 
   for (const game of allGames) {
-    const movieGenres = Array.isArray(movie.genre)
-      ? movie.genre
-      : [movie.genre];
+    const gameGenres = Array.isArray(game.genre)
+      ? game.genre
+      : [game.genre];
 
-    for (const genre of movieGenres) {
+    for (const genre of gameGenres) {
       genres.add(genre);
     }
   }
@@ -74,12 +74,12 @@ function applyFiltersAndSort() {
   let filteredGames = allGames.filter(function (game) {
     const matchesTitle = movie.title.toLowerCase().includes(searchValue);
 
-    const movieGenres = Array.isArray(movie.genre)
-      ? movie.genre
-      : [movie.genre];
+    const gameGenres = Array.isArray(game.genre)
+      ? game.genre
+      : [game.genre];
 
     const matchesGenre =
-      selectedGenre === "all" || movieGenres.includes(selectedGenre);
+      selectedGenre === "all" || gameGenres.includes(selectedGenre);
 
     return matchesTitle && matchesGenre;
   });
@@ -115,8 +115,8 @@ function showGames(games) {
 
 function showGame(game) {
   const genres = Array.isArray(movie.genre)
-    ? movie.genre.join(", ")
-    : movie.genre;
+    ? game.genre.join(", ")
+    : game.genre;
 
   const movieCard = `
     <article class="movie-card" tabindex="0">
@@ -151,8 +151,8 @@ function showGameDialog(game) {
   const dialogContent = document.querySelector("#dialog-content");
 
   const genres = Array.isArray(movie.genre)
-    ? movie.genre.join(", ")
-    : movie.genre;
+    ? game.genre.join(", ")
+    : game.genre;
 
   const actors = Array.isArray(movie.actors)
     ? movie.actors.join(", ")
