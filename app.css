@@ -32,7 +32,7 @@ header h1 {
 .topbar {
   background: #7a0808;
   margin: 1rem auto 2rem;
-  width: 100%;
+  width: min(94vw, 430px);
   border-radius: 14px;
   padding: 0.5rem 0.75rem;
 
@@ -44,11 +44,13 @@ header h1 {
 .topbar-logo {
   width: 42px;
   height: auto;
+  flex-shrink: 0;
 }
 
 .topbar-nav {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1.2rem;
 }
 
@@ -59,10 +61,13 @@ header h1 {
   color: #faf3eb;
   font-weight: 700;
   font-size: 0.95rem;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .search-btn {
   font-size: 1.1rem;
+  padding: 0;
 }
 
 .subtitle {
