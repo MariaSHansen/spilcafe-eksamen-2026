@@ -168,6 +168,18 @@ main {
   display: none;
 }
 
+.controls.show {
+  display: grid;
+  margin-bottom: 1rem;
+}
+
+.category-panel {
+  background: #e6d6c4;
+  border: 2px solid #6c0808;
+  border-radius: 18px;
+  padding: 1rem;
+}
+
 .title-row {
   display: flex;
   justify-content: space-between;
@@ -232,7 +244,7 @@ dialog#game-dialog::backdrop {
 }
 
 .dialog-image {
-  width: 220%;
+  width: 220px;
   max-width: 100%;
   border-radius: 16px;
   aspect-ratio: 1 / 1;

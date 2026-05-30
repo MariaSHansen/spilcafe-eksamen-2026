@@ -17,6 +17,10 @@ function initApp() {
     .querySelector("#sort-select")
     .addEventListener("change", applyFiltersAndSort);
 
+  document
+  .querySelector("#category-btn")
+  .addEventListener("click", toggleCategoryPanel);
+
   getGames();
 }
 
@@ -201,4 +205,10 @@ function showGameDialog(game) {
 
 function formatPlaytime(playtime) {
   return typeof playtime === "number" ? `${playtime} min`: `${playtime} min`;
+}
+
+function toggleCategoryPanel () {
+  document
+  .querySelector(".category-panel")
+  .classList.toggle("show");
 }
