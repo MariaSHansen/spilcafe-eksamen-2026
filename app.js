@@ -6,7 +6,7 @@ let allGames = [];
 
 function initApp() {
   document
-    .querySelector("#search-input")
+    .querySelector("#search-input-mobile")
     .addEventListener("input", applyFiltersAndSort);
 
   document
@@ -68,7 +68,7 @@ function populateGenreSelect() {
 
 function applyFiltersAndSort() {
   const searchValue = document
-    .querySelector("#search-input")
+    .querySelector("#search-input-mobile")
     .value.trim()
     .toLowerCase();
 
@@ -212,3 +212,17 @@ function toggleCategoryPanel () {
   .querySelector(".category-panel")
   .classList.toggle("show");
 }
+
+const openSearchBtn = document.querySelector("#open-search");
+const closeSearchBtn = document.querySelector("#close-search");
+const searchBox = document.querySelector("#search-box");
+
+openSearchBtn.addEventListener("click", () => {
+  searchBox.classList.add("active");
+  openSearchBtn.style.display = "none";
+});
+
+closeSearchBtn.addEventListener("click", () => {
+  searchBox.classList.remove("active");
+  openSearchBtn.style.display = "block";
+});
