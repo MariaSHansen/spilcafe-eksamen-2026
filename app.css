@@ -72,6 +72,8 @@ header h1 {
 
 .mobile-search {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .search-icon {
@@ -86,7 +88,7 @@ header h1 {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translate(-50%);
+  transform: translateY(-50%);
 
   width: 150px;
   height: 40px;
@@ -97,7 +99,7 @@ header h1 {
 
   align-items: center;
   gap: 6px;
-  padding: 0 8 px;
+  padding: 0 8px;
 }
 
 .search-box.active {
