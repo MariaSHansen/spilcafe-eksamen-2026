@@ -106,16 +106,30 @@ Ved at arbejde med objekter i et array bliver det også lettere at filtrere data
 Eksempel på JavaScript kode:
 
 function applyFiltersAndSort() {
-  const searchValue = document
+    // Henter teksten fra søgefeltet
+    const searchValue = document
     .querySelector("#search-input-mobile")
+
+    // fjerner mellemrum før og efter teksten
     .value.trim()
+    // gør søgningen mindre følsom over for store og små bogstaver
     .toLowerCase();
 
-  const selectedGenre = document.querySelector("#genre-select").value;
-  const sortOption = document.querySelector("#sort-select").value;
+    // Henter den valgte genre fra dropdown-menuen
+    const selectedGenre = document.querySelector("#genre-select").value;
 
-  let filteredGames = allGames.filter(function (game) {
+    // Henter den valgte sortering
+    const sortOption = document.querySelector("#sort-select").value;
+
+
+
+
+    /* Spillene filtreres ud fra søgning på titel og valg af genre og sorteres 
+    let filteredGames = allGames.filter(function (game) {
     const matchesTitle = game.title.toLowerCase().includes(searchValue);
+
+
+
 
     const gameGenres = Array.isArray(game.genre)
       ? game.genre

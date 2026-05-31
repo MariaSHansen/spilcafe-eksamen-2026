@@ -14,10 +14,6 @@ function initApp() {
     .addEventListener("change", applyFiltersAndSort);
 
   document
-    .querySelector("#sort-select")
-    .addEventListener("change", applyFiltersAndSort);
-
-  document
   .querySelector("#category-btn")
   .addEventListener("click", toggleCategoryPanel);
 
@@ -73,7 +69,6 @@ function applyFiltersAndSort() {
     .toLowerCase();
 
   const selectedGenre = document.querySelector("#genre-select").value;
-  const sortOption = document.querySelector("#sort-select").value;
 
   let filteredGames = allGames.filter(function (game) {
     const matchesTitle = game.title.toLowerCase().includes(searchValue);
@@ -87,14 +82,6 @@ function applyFiltersAndSort() {
 
     return matchesTitle && matchesGenre;
   });
-
-  if (sortOption === "title") {
-    filteredGames.sort((a, b) => a.title.localeCompare(b.title));
-  } else if (sortOption === "year") {
-    filteredGames.sort((a, b) => b.year - a.year);
-  } else if (sortOption === "rating") {
-    filteredGames.sort((a, b) => b.rating - a.rating);
-  }
 
   showGames(filteredGames);
 }
