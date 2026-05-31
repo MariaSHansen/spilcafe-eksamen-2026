@@ -13,6 +13,20 @@
     <header class="topbar">
       <img src="img/logo.webp" alt="Spilcaféen logo" class="topbar-logo"/>
 
+      <div class="mobile-search">
+        <button id="open-search" class="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        
+        <div id="search-box" class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="search-input-mobile" type="search" placeholder="Søg" />
+          <button id="close-search">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
       <nav class="topbar-nav">
         <button class="nav-btn">Menu</button>
         <button class="nav-btn" id="category-btn">Spil Kategori</button>
@@ -25,12 +39,7 @@
     <main>
       <section class="controls category-panel">
         <div class="control-group">
-          <label for="search-input">Søg på titel</label>
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Fx Monopoly, Kaste gris eller Hvem er Hvem?"
-          />
+          <input placeholder="Fx Monopoly, Kaste gris eller Hvem er Hvem?"/>
         </div>
 
         <div class="control-group">
@@ -41,7 +50,7 @@
         </div>
 
         <div class="control-group">
-          <label for="sort-select">Sortering</label>
+          <label for="sort-select">Filtrer</label>
           <select id="sort-select">
             <option value="none">Ingen sortering</option>
             <option value="title">Titel (A-Å)</option>
