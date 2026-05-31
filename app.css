@@ -70,6 +70,54 @@ header h1 {
   padding: 0;
 }
 
+.mobile-search {
+  position: relative;
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.search-box {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%);
+
+  width: 150px;
+  height: 40px;
+
+  background: #fff8ef;
+  border: 3px solid #8b0000;
+  border-radius: 12px;
+
+  align-items: center;
+  gap: 6px;
+  padding: 0 8 px;
+}
+
+.search-box.active {
+  display: flex;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+#close-search {
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+}
+
 .subtitle {
   font-size: 0.95rem;
   color: var(--text-muted);
