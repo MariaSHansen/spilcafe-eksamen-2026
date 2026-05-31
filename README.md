@@ -106,71 +106,45 @@ Ved at arbejde med objekter i et array bliver det også lettere at filtrere data
 Eksempel på JavaScript kode:
 
 function applyFiltersAndSort() {
+
     // Henter teksten fra søgefeltet
     const searchValue = document
     .querySelector("#search-input-mobile")
-
-    // fjerner mellemrum før og efter teksten
+    // Fjerner mellemrum før og efter teksten
     .value.trim()
-    // gør søgningen mindre følsom over for store og små bogstaver
+    // Gør søgningen mindre følsom over for store og små bogstaver
     .toLowerCase();
 
-    // Henter den valgte genre fra dropdown-menuen
+    // Henter den valgte genre for dropdown-menu 
     const selectedGenre = document.querySelector("#genre-select").value;
 
-    // Henter den valgte sortering
-    const sortOption = document.querySelector("#sort-select").value;
-
-
-
-
-    /* Spillene filtreres ud fra søgning på titel og valg af genre og sorteres 
+    /*
+    Spillene filtreres ud fra søgning på titel og valgt genre.
+    */
     let filteredGames = allGames.filter(function (game) {
+    
+    // Undersøger om spillets titel matcher søgningen
     const matchesTitle = game.title.toLowerCase().includes(searchValue);
 
-
-
-
+    /*
+    Nogle spil kan have flere genre.
+    Derfor undersøges det først om genre er et array.
+    */
     const gameGenres = Array.isArray(game.genre)
       ? game.genre
       : [game.genre];
 
+    /*
+    Hvis brugeren har valgt "all", vises alle spil. 
+    Ellers vises kun spil, der passer til den valgte genre.
+    */
     const matchesGenre =
       selectedGenre === "all" || gameGenres.includes(selectedGenre);
 
+    //Spillet vises kun hvis begge betingelser passer.
     return matchesTitle && matchesGenre;
   });
 
-  if (sortOption === "title") {
-    filteredGames.sort((a, b) => a.title.localeCompare(b.title));
-  } else if (sortOption === "year") {
-    filteredGames.sort((a, b) => b.year - a.year);
-  } else if (sortOption === "rating") {
-    filteredGames.sort((a, b) => b.rating - a.rating);
-  }
-
-  showGames(filteredGames);
+    // Til sidst vises de filtrerede spil på siden
+    showGames(filteredGames);
 }
-
-
-Forklaring af koden:
-Denne funktion burges til at filtrere, søge og sortere spillene på siden. 
-
-Først hentes brugerens input fra søgefeltet, den valgte genre og den valgte sortering. 
-
-Derefter filtreres spillene ved hjælp af filer()-metoden. Funktionen undersøger: 
-
-- om spillet matcher søgningen 
-- om spillet matcher den valgte genre 
-
-includes() bruges til at undersøge, om titlen indeholder søgeordet. 
-
-Koden håndtere også, at genre kan være både en enkelt værdi eller et array med flere genre. 
-
-Efter filtreringen sorteres spillene ud fra brugerens valg, for eksempel alfabetisk efter titel. 
-
-Til sidst kaldes funktionen showGames(), som viser de filtrerede spil på siden. 
-
-Denne funktion er vigtig for projektet, fordi den gør siden interaktiv og hjælper brugeren med hurtigt at finde relevante spil. 
-
-
