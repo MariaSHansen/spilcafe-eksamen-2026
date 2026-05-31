@@ -127,16 +127,38 @@ header h1 {
 }
 
 main {
-  width: min(94vw, 900px);
+  width: min(94vw, 1200px);
   margin-left: auto;
   margin-right: auto;
 }
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(210px, 1fr));
+  gap: 1.5rem;
   padding: 1rem 0;
+}
+
+@media (max-width: 1000px) {
+  .game-grid {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .game-grid {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 0.9rem;
+  }
+
+  .game-info h2 {
+    font-size: 1.05rem;
+  }
+
+  .game-chip {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.45rem;
+  }
 }
 
 .game-card {
@@ -228,6 +250,9 @@ main {
   border: 2px solid #6c0808;
   border-radius: 18px;
   padding: 1rem;
+
+  max-width: 950px;
+  margin: 0 auto 1rem auto;
 }
 
 .title-row {
@@ -367,7 +392,7 @@ summary {
 
 /* ===== Status & Empty States ===== */
 .status-bar {
-  margin: 0.8rem 0;
+  margin: 0.8rem;
 }
 
 #game-count {
